@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>调查问卷</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/questionnaire.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="./images/logo.png">
+            <ul>
+                <li><a href="./index.html">首页</a></li>
+                <li>厌食症
+                    <div>
+                        <a href="./anorexia_nervosa1.html">简介</a>
+                        <a href="./anorexia_nervosa2.html">诊疗</a>
+                    </div>
+                </li>
+                <li>贪食症
+                    <div>
+                        <a href="./bulimia_nervosa1.html">简介</a>
+                        <a href="./bulimia_nervosa2.html">诊疗</a>
+                    </div>
+                </li>
+                <li>异食癖
+                    <div>
+                        <a href="./Pica1.html">简介</a>
+                        <a href="./Pica2.html">诊疗</a>
+                    </div>
+                </li>
+                <li><a href="./search.html">新闻搜索</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form action="/submit-questionnaire" method="post">
+            <table border="1" background="./images/tableBg.png">
+                <tr>
+                    <th colspan="2">
+                        <h1>进食障碍知情调查问卷</h1>
+                    </th>
+                </tr>
+                <tr>
+                    <td id="intr" colspan="2">
+                        上海市精神卫生中心的统计数据显示，进食障碍患者数迅速增长，<br>2002年该中心门诊仅收治3例，2018年是591例，患者来源地从一二线城市向三四线城市扩散！<br><br>亲爱的朋友们，<br>为了便于进行进食障碍的科普与调研，下面我们想通过这份调查问卷来了解你对进食障碍的了解程度以及对该类精神障碍的看法。
+                    </td>
+                </tr>
+                <tr>
+                    <td>您的职业类别</td>
+                    <td><select name="work" multiple="true" size="3" required>
+                            <option value="farmer">&nbsp;&nbsp;农民&nbsp;&nbsp;</option>
+                            <option value="student">&nbsp;&nbsp;在校学生&nbsp;&nbsp;</option>
+                            <option value="teacher">&nbsp;&nbsp;在职教师&nbsp;&nbsp;</option>
+                            <option value="employee">&nbsp;&nbsp;企业员工&nbsp;&nbsp;</option>
+                            <option value="other">&nbsp;&nbsp;其他&nbsp;&nbsp;</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td>您的性别</td>
+                    <td>
+                        <label><input name="gender" type="radio" value="male" required />男</label>
+                        <label><input name="gender" type="radio" value="female" />女</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>电话</td>
+                    <td><input type="number" name="phone" placeholder="联系电话" /><br /></td>
+                </tr>
+                <tr>
+                    <td>邮件</td>
+                    <td><input type="email" name="email" placeholder="邮箱地址"> </td>
+                </tr>
+                <tr>
+                    <td>您的教育程度</td>
+                    <td>
+                        <label><input type="radio" name="education" value="1"
+                                required />&nbsp;&nbsp;小学&nbsp;&nbsp;</label>
+                        <label><input type="radio" name="education" value="2" />&nbsp;&nbsp;中学&nbsp;&nbsp; </label>
+                        <label><input type="radio" name="education" value="3" />&nbsp;&nbsp;本科&nbsp;&nbsp; </label>
+                        <label><input type="radio" name="education" value="4" />&nbsp;&nbsp;硕士研究生&nbsp;&nbsp; </label>
+                        <label><input type="radio" name="education" value="5" />&nbsp;&nbsp;博士及以上&nbsp;&nbsp; </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>您的年龄段</td>
+                    <td>
+                        <select name="age">
+                            <option value="1">18岁以下</option>
+                            <option selected value="2">18~25岁</option>
+                            <option selected value="3">25~35岁</option>
+                            <option selected value="4">35~45岁</option>
+                            <option value="5">45岁以上</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>您之前是否有了解过进食障碍以及相关的几种疾病</td>
+                    <td>
+                        <label><input type="radio" name="amount1" value="1"
+                                required />&nbsp;&nbsp;从未听说&nbsp;&nbsp;</label>
+                        <label><input type="radio" name="amount1" value="2" />&nbsp;&nbsp;了解很少&nbsp;&nbsp; </label>
+                        <label><input type="radio" name="amount1" value="3" />&nbsp;&nbsp;了解&nbsp;&nbsp; </label>
+                        <label><input type="radio" name="amount1" value="4" />&nbsp;&nbsp;熟知&nbsp;&nbsp; </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>您第一次了解进食障碍相关内容的时间</td>
+                    <td><label><input name="date" type="date" value="请选择时间" /></label></td>
+                </tr>
+                <tr>
+                    <td>您是否曾经治愈或者正在经历进食障碍以及相关的几种疾病？</td>
+                    <td>
+                        <label><input type="radio" name="amount2" value="1" required />&nbsp;&nbsp;是&nbsp;&nbsp;</label>
+                        <label><input type="radio" name="amount2" value="2" />&nbsp;&nbsp;否&nbsp;&nbsp; </label>
+                        <label><input type="radio" name="amount2" value="3" />&nbsp;&nbsp;没在意过&nbsp;&nbsp; </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>您身边是否有曾经治愈或者正在经历进食障碍以及相关的几种疾病的患者？</td>
+                    <td>
+                        <label><input type="radio" name="amount3" value="1" required />&nbsp;&nbsp;是&nbsp;&nbsp;</label>
+                        <label><input type="radio" name="amount3" value="2" />&nbsp;&nbsp;否&nbsp;&nbsp; </label>
+                        <label><input type="radio" name="amount3" value="3" />&nbsp;&nbsp;没注意过&nbsp;&nbsp; </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>您对进食障碍的看法是什么？（选出你最认同的选项，最多选四个）</td>
+                    <td>
+                        <label><input type="checkbox" name="opinion" value="1" />&nbsp;&nbsp;进食障碍值得被关注和研究</label><br>
+                        <label><input type="checkbox" name="opinion"
+                                value="2" />&nbsp;&nbsp;进食障碍根本不需要治疗，这些都是小事</label><br>
+                        <label><input type="checkbox" name="opinion"
+                                value="3" />&nbsp;&nbsp;患有该障碍的人是在作闹，拿自己的身体不当回事</label><br>
+                        <label><input type="checkbox" name="opinion"
+                                value="4" />&nbsp;&nbsp;青少年青春期经历进食障碍很正常，不用进行干预</label><br>
+                        <label><input type="checkbox" name="opinion"
+                                value="5" />&nbsp;&nbsp;患有进食障碍的病人都是女性，没有男性</label><br>
+                        <label><input type="checkbox" name="opinion"
+                                value="6" />&nbsp;&nbsp;患有进食障碍的人大都遭受心理问题折磨</label><br>
+                        <label><input type="checkbox" name="opinion"
+                                value="7" />&nbsp;&nbsp;治疗厌食症没有那么麻烦，强制监督病人进食即可</label><br>
+                        <label><input type="checkbox" name="opinion"
+                                value="8" />&nbsp;&nbsp;暴食症挺好的，多吃点，身体营养更均衡</label><br>
+                        <label><input type="checkbox" name="opinion"
+                                value="9" />&nbsp;&nbsp;异食癖的患者是心理扭曲，吃食物那么难吗</label><br>
+                        <label><input type="checkbox" name="opinion"
+                                value="10" required/>&nbsp;&nbsp;没有认同的</label><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>对于诊疗及科普进食障碍这一疾病，您有什么独到见解？</td>
+                    <td>
+                        <label><textarea name="insight" rows="5" cols="30"></textarea> </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>请为本网站打分(满分5分,最低0分)</td>
+                    <td><input type="range" name="rating" max="5" min="0" value="0"></td>
+                </tr>
+                <tr>
+                    <td>对于本站网页优化您有什么更好的建议吗？<br>（请提交标有修改意见的网页截图）</td>
+                    <td>
+                        <label><textarea name="suggestion" rows="5" cols="30"></textarea> </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" value="提交问卷">
+                        <button type="reset">重置</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </main>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="https://zh.wikipedia.org/wiki/%E8%BF%9B%E9%A3%9F%E9%9A%9C%E7%A2%8D"> 维基百科 </a>|</li>
+                <li><a href="https://baike.baidu.com/item/%E8%BF%9B%E9%A3%9F%E9%9A%9C%E7%A2%8D/395444#4-2"> &nbsp;百度百科
+                    </a>|</li>
+                <li><a href="questionnaire.html"> &nbsp;调查问卷 </a>|</li>
+                <li><a href="mailto:10214602404@stu.ecnu.edu.cn">&nbsp;联系我们 </a></li>
+            </ul>
+        </nav>
+        <address><a href="">Copyright &copy; 李芳&nbsp;10214602404</a></address>
+    </footer>
+</body>
+
+</html>

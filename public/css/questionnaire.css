@@ -1,0 +1,15 @@
+body{  
+    width:1500px;
+    margin:0 auto;
+}
+ main table{    
+    border-collapse: collapse;
+    width:1000px;
+    margin:auto;
+}
+td{padding:5px;}
+#intr{
+            font-size:20px;           
+            font-family:"huawenxinwei" ;
+            padding:10px;
+}

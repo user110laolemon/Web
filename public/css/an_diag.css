@@ -1,0 +1,102 @@
+#guidance {
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(to bottom, rgba(251, 190, 180, 0.5), rgba(0, 0, 0, 0));
+}
+
+#guidance ul li {
+    background-color: black;
+    list-style-type: none;
+    display: inline-block;
+    width: 150px;
+    border-radius: 30%;
+    font-size: 18px;
+}
+
+#guidance ul li:hover {
+    background-color: white;
+}
+
+#guidance ul li:hover a {
+    color: black;
+}
+
+#guidance a:link {
+    color: white;
+}
+
+#guidance a[href]:visited {
+    color: orange;
+}
+
+#guidance a[href]:hover {
+    background-color: white;
+    color: black;
+}
+
+#guidance a[href]:active {
+    background-color: rgb(166, 107, 47);
+    color: white;
+}
+
+main {
+    border: 100px solid;
+    border-image-source: url("../images/border.png");
+    border-image-slice: 20% 20% 20% 20%;
+}
+
+#diagnoseIntro,#hypotypeIntro {
+    border-collapse: collapse;
+    line-height: 30px;
+    width: 500px;
+    color: #999;
+}
+
+#diagnoseIntro td,#hypotypeIntro td {
+    border-bottom: 1px dotted #a5a5a5;
+}
+
+#diagnose,#hypotype {
+    height: 350px;
+}
+
+h1,h2 {
+    font-family: 华文彩云;
+}
+
+h3,.text1,p {
+    text-indent: 2em;
+    text-align: center;
+}
+
+.text2{
+    text-indent: 2em;
+    text-align: left;
+}
+
+section {
+    box-shadow: 0 0 5px;
+    background-color: rgb(233, 241, 240);
+}
+
+h2:not(#guidance h2) {
+    border-left: 10px solid rgb(81, 3, 0);
+    border-bottom: 2px solid rgb(81, 3, 0);
+    /*border-bottom: 2px solid rgb(20, 212, 148);*/
+    width: 180px;
+    height: 25px;
+    text-shadow: 3px 3px 3px #999;
+}
+
+main table tr td {
+    padding: 10px;
+}
+
+main section {
+    padding: 5px;
+    margin: 3px;
+}
+
+main h2 {
+    margin-bottom: 5px;
+}

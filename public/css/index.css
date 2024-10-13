@@ -1,0 +1,256 @@
+main{
+    margin-top:50px ;
+}
+
+#content{
+    position: relative;
+    width: 1100px;
+    height: 420px;
+    margin: 0 auto;
+    background: url(../images/mask.png);
+    background-size: 1100px 420px;
+}
+
+#content pre{
+    color: #ffffff;
+    font-family: inherit;
+}
+
+#fommer{
+    position: relative;
+    margin-left: -30px;
+    top: 10px;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+#latter{
+    position: relative;
+    top: 25%;
+    margin-left: -20px;
+}
+
+#latter h3{
+    display: inline;
+}
+
+@keyframes showContentImg{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+#content img{
+    position: absolute;
+    z-index: -1;
+    right: 100px;
+    bottom: 0;
+    width: 500px;
+    animation: showContentImg 2s;
+}
+
+#illnesses{
+    position: relative;
+    height: 300px;
+    width: 1100px;
+    margin: 6px auto 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.illness{
+    position: relative;
+    width: 250px;
+    height: 200px;
+    box-shadow: 0 0 2px black;
+    overflow: hidden;
+}
+
+.illness img{
+    position: absolute;
+    width: 250px;
+    height: 200px;
+    transition: all 1s;
+    -ms-transition: all 1s;/*IE*/
+    -moz-transition: all 1s; /* Firefox */
+    -webkit-transition: all 1s; /* Safari 和 Chrome */
+    -o-transition: all 1s; /* Opera */
+}
+
+.summary{
+    position: absolute;
+    writing-mode: vertical-lr;
+    font-size: 20px;
+    color: white;
+    filter: drop-shadow(0 0 2px pink);
+    right: 60px;
+    top: 30px;
+    opacity: 0;
+    transition: all 1s;
+    -ms-transition: all 1s;/*IE*/
+    -moz-transition: all 1s; /* Firefox */
+    -webkit-transition: all 1s; /* Safari 和 Chrome */
+    -o-transition: all 1s; /* Opera */
+}
+
+.illness:hover .intro{
+    transform: rotateY(0deg);
+    transition: all 1s;
+    -ms-transition: all 1s;/*IE*/
+    -moz-transition: all 1s; /* Firefox */
+    -webkit-transition: all 1s; /* Safari 和 Chrome */
+    -o-transition: all 1s; /* Opera */
+}
+
+.illness:hover img{
+    margin-left: 40px;
+    transition: all 1s;
+    -ms-transition: all 1s;/*IE*/
+    -moz-transition: all 1s; /* Firefox */
+    -webkit-transition: all 1s; /* Safari 和 Chrome */
+    -o-transition: all 1s; /* Opera */
+    filter: blur(5px) brightness(50%);
+}
+
+.illness:hover .summary{
+    opacity: 1;
+    transition: all 1s;
+    -ms-transition: all 1s;/*IE*/
+    -moz-transition: all 1s; /* Firefox */
+    -webkit-transition: all 1s; /* Safari 和 Chrome */
+    -o-transition: all 1s; /* Opera */
+}
+
+.intro{
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    width: 80px;
+    height: 200px;
+    background-color: #693515;
+    transform: rotateY(-90deg);
+    transform-origin:left;
+    transition: all 1s;
+    -ms-transition: all 1s;/*IE*/
+    -moz-transition: all 1s; /* Firefox */
+    -webkit-transition: all 1s; /* Safari 和 Chrome */
+    -o-transition: all 1s; /* Opera */
+    background-image: url(../images/11-border.png) ;
+    background-size:70px 190px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.intro h2{
+    writing-mode: vertical-lr;
+    margin: 30px auto;
+    color: #f9e8d0;
+    font-family: 微软雅黑;
+    font-weight:normal;
+}
+
+#foods{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+@keyframes foodMove1{
+    0%{
+        right: 250px;
+        top: 100px;
+        transform: rotateX(0deg);
+    }
+    10%{
+        opacity: 1;
+    }
+    100%{
+        top: 950px;
+        margin-left: 500px;
+        transform: rotateZ(180deg);
+    }
+}
+
+@keyframes foodMove2{
+    0%{
+        right: 50px;
+        top: 350px;
+        transform: rotateX(0deg);
+    }
+    10%{
+        opacity: 1;
+    }
+    50%{
+        margin-left: 900px;
+    }
+    100%{
+        top: 950px;
+        margin-left: 800px;
+        transform: rotateZ(-90deg);
+    }
+}
+
+@keyframes foodMove3{
+    0%{
+        right: 175px;
+        top: 400px;
+        transform: rotateZ(0deg);
+    }
+    10%{
+        opacity: 1;
+    }
+    100%{
+        top: 950px;
+        margin-left: 200px;
+        transform: rotateZ(270deg);
+    }
+}
+
+.food{
+    position: absolute;
+    opacity: 0;
+}
+
+#foodRight{
+    position: absolute;
+    right: -80px;
+    width: 300px;
+}
+
+#foodLeft{
+    position: absolute;
+    left: -50px;
+    bottom: 150px;
+    width: 200px;
+}
+
+.food:nth-of-type(1){
+    right: 250px;
+    top: 100px;
+    width: 50px;
+    animation: foodMove1 12s infinite ease-in;
+}
+
+.food:nth-of-type(2){
+    right: 50px;
+    top: 350px;
+    width: 75px;
+    animation: foodMove2 15s infinite ease-in;
+}
+
+.food:nth-of-type(3){
+    right: 175px;
+    top: 400px;
+    width: 50px;
+    animation: foodMove3 17s infinite ease-in;
+}
+
+footer{
+    position: relative;
+    bottom: 0px;
+}

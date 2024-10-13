@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>新闻搜索</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/search.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="#"><img src="./images/logo.png"></a>
+                <div class="collapse navbar-collapse" id="navbarcollapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">首页</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink" role="button"
+                                data-toggle="dropdown" aria-expanded="false">
+                                厌食症
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><a href="./anorexia_nervosa1.html" class="dropdown-item">简介</a></li>
+                                <li><a href="./anorexia_nervosa2.html" class="dropdown-item">诊疗</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink2" role="button"
+                                data-toggle="dropdown" aria-expanded="false">贪食症
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink2">
+                                <li><a href="./bulimia_nervosa1.html" class="dropdown-item">简介</a></li>
+                                <li><a href="./bulimia_nervosa2.html" class="dropdown-item">诊疗</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink3" role="button"
+                                data-toggle="dropdown" aria-expanded="false">异食癖
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink3">
+                                <li><a href="./Pica1.html" class="dropdown-item">简介</a></li>
+                                <li><a href="./Pica2.html" class="dropdown-item">诊疗</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./search.html">新闻搜索</a>
+                        </li>
+                    </ul>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcollapse"
+                    aria-controls="navbarcollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+    </header>
+
+    <main role="main">
+        <div class="container">
+            <div class="search-container">
+                <form onsubmit="search(event)">
+                    <input type="text" placeholder="输入你想知道相关新闻的关键词，如厌食症..." id="searchBox">
+                    <button type="submit">Search</button>
+            </div>
+
+            <div id="searchResults"></div>
+        </div>
+
+        <script>
+            async function search(event) {
+                event.preventDefault();
+                const query = document.getElementById('searchBox').value;
+                console.log(`Search query: ${query}`);
+                try {
+                    const response = await fetch(`http://localhost:3000/search?q=${query}`);
+                    if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+                    const results = await response.json();
+                    console.log('Search results:', results);
+                    const resultsContainer = document.getElementById('searchResults');
+                    resultsContainer.innerHTML = '';
+
+                    results.forEach(result => {
+                        const articleElement = document.createElement('div');
+                        articleElement.className = 'article';
+                        articleElement.innerHTML = `
+                <h2>${result.title}</h2>
+                <p><strong>作者:</strong> ${result.author}</p>
+                <p><strong>日期:</strong> ${new Date(result.date).toLocaleDateString()}</p>
+                <p><strong>摘要:</strong> ${result.summary}</p>
+                <a href="${result.url}" target="_blank">阅读更多</a>
+            `;
+                        resultsContainer.appendChild(articleElement);
+                    });
+                } catch (error) {
+                    console.error('Error during search:', error);
+                }
+            }
+        </script>
+
+        <div id="carouselPic" class="carousel slide carousel-fade" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active " data-interval="3000">
+                    <img src="./images/1.jpg">
+                </div>
+                <div class="carousel-item" data-interval="3000">
+                    <img src="./images/2.jpg">
+                </div>
+                <div class="carousel-item" data-interval="3000">
+                    <img src="./images/3.jpg">
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-target="#carouselPic" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-target="#carouselPic" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </button>
+
+            <ol class="carousel-indicators">
+                <li data-target="#carouselPic" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselPic" data-slide-to="1"></li>
+                <li data-target="#carouselPic" data-slide-to="2"></li>
+            </ol>
+        </div>
+
+    </main>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="https://zh.wikipedia.org/wiki/%E8%BF%9B%E9%A3%9F%E9%9A%9C%E7%A2%8D"> 维基百科 </a>|</li>
+                <li><a href="https://baike.baidu.com/item/%E8%BF%9B%E9%A3%9F%E9%9A%9C%E7%A2%8D/395444#4-2"> &nbsp;百度百科
+                    </a>|</li>
+                <li><a href="questionnaire.html"> &nbsp;调查问卷 </a>|</li>
+                <li><a href="mailto:10214602404@stu.ecnu.edu.cn">&nbsp;联系我们 </a></li>
+            </ul>
+        </nav>
+        <address><a href="">Copyright &copy; 李芳&nbsp;10214602404</a></address>
+    </footer>
+
+    <script type="text/javascript" src="./js/jquery.slim.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
